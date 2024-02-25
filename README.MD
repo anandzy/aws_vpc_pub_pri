@@ -3,6 +3,7 @@
 This document outlines the VPC topology for our infrastructure within the AWS account, focusing on the N. Virginia Region which encompasses six availability zones. For each availability zone, we have established one public and one private subnet to ensure a robust and scalable network architecture.
 
 ![VPC Diagram](vpc_diagram.jpg)
+![VPC Diagram](vpc_diagram2.jpg)
 
 ## Prerequisites
 - You need AWS programmatic keys or similar permissions to provision this infrastructure.
@@ -24,3 +25,8 @@ This document outlines the VPC topology for our infrastructure within the AWS ac
 | 10   | Private     | us-east-1e        | 10.0.144.0/20    |
 | 11   | Public      | us-east-1f        | 10.0.160.0/20    |
 | 12   | Private     | us-east-1f        | 10.0.176.0/20    |
+
+
+## Terraform State Management
+
+Please note that the Terraform state file (`terraform.tfstate`) will be saved in the same directory where Terraform commands are executed. It is crucial to manage this file carefully, as it contains all the information about the resources Terraform manages. For collaborative projects or to enhance the security of your state file, consider using remote state backends such as AWS S3 with state locking and encryption options enabled.
